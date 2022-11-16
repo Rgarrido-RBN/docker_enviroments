@@ -41,6 +41,6 @@ docker_build ()
 # Run docker image
 docker_run ()
 {
-    IMAGE_NAME = "$1"
+    IMAGE_NAME="$1"
     docker run --privileged -it -v $HOME/Projects/:/${USER} $IMAGE_NAME /bin/bash
 }
