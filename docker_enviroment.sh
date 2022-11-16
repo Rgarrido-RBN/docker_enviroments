@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+# @    CONTACT ME!          Rubén Garrido - rgarrido.rbn@gmail.com        @
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 if [ "$0" = "$BASH_SOURCE" ]; then
-    echo "Error: Script must be sourced"
+    echo "THIS SCRIPT MUST BE SOURCED!"
     exit 1
 fi
 
@@ -12,12 +16,16 @@ echo
 echo "    docker_permision -->  Add permission to docker after installation, use it only if docker throws permission errors"
 echo "    docker_build {image} -->  BUILD docker image"
 echo "    docker_run {image} -->  RUN docker image"
-echo "                                            "
-echo "                                            "
-echo ">>>>>>>>>>>>>>> Available images"
-echo "    - ubuntu20 -> Ubuntu 20.04 image with necessary tools for cross compiling for differents architectures"
-echo "    - ubuntu18 -> Ubuntu 18.04 image with necessary tools for cross compiling for differents architectures"
-echo "    - ubuntu16 -> Ubuntu 16.04 image with necessary tools for cross compiling for differents architectures"
+echo "    list_docker -->  list different docker images ready to build on this repository"
+
+list_docker ()
+{
+    echo ">>>>>>>>>>>>>>> Available images"
+    echo "    - ubuntu20 -> Ubuntu 20.04 image with necessary tools for cross compiling for differents architectures"
+    echo "    - ubuntu18 -> Ubuntu 18.04 image with necessary tools for cross compiling for differents architectures"
+    echo "    - ubuntu16 -> Ubuntu 16.04 image with necessary tools for cross compiling for differents architectures"
+    echo "    - esp32 -> esp-idf enviroment ready to build esp-idf based projects"
+}
 
 # Add permission to docker after installation, use it only if you need it
 docker_permision ()
