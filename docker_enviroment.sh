@@ -25,6 +25,7 @@ list_docker ()
     echo "    - ubuntu18 -> Ubuntu 18.04 image with necessary tools for cross compiling for differents architectures"
     echo "    - ubuntu16 -> Ubuntu 16.04 image with necessary tools for cross compiling for differents architectures"
     echo "    - esp32 -> esp-idf enviroment ready to build esp-idf based projects"
+    echo "    - rust -> debian enviroment ready to build rust projects"
 }
 
 # Add permission to docker after installation, use it only if you need it
