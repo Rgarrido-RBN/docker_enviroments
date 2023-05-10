@@ -40,6 +40,7 @@ docker_permision ()
 docker_build ()
 {
     IMAGE_NAME="$1"
+
     docker build --build-arg USERNAME="$(id -un)" \
                  --build-arg GROUPNAME="$(id -gn)" \
                  --build-arg USERID="$(id -u)" \

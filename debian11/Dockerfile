@@ -26,6 +26,8 @@ RUN apt-get update && apt-get install -y \
 	gawk \
 	busybox \
 	lzma \
+    libusb-1.0-0 \
+    libusb-1.0-0-dev \
 	libc6-dev-i386 \ 
 	lib32stdc++6 \
 	zlib1g-dev \
@@ -53,6 +55,7 @@ RUN apt-get update && apt-get install -y \
 	&& apt-get clean \
 	&& rm -fR /var/lib/apt/lists/*
 
+RUN pip install pycryptodomex
 # Base builder with machine user
 #ARG USERNAME
 #ARG GROUPNAME
