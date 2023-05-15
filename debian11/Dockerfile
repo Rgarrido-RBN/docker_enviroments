@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
 	texinfo \
 	patch bzip2 cpio python unzip \
 	git \
+    usbutils \
 	u-boot-tools\
 	fakeroot \
 	gawk \

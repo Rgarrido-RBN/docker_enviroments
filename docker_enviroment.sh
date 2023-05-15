@@ -52,5 +52,13 @@ docker_build ()
 docker_run ()
 {
     IMAGE_NAME="$1"
-    docker run --privileged -it -v $HOME/Projects/:/${USER} $IMAGE_NAME /bin/bash
+    DEVICE="$2"
+
+    if [[ -n $DEVICE ]];then
+        DEVICE_OPTION="--device=${DEVICE}:${DEVICE}
+    else
+        DEVICE_OPTION=''
+    fi
+
+    docker run --privileged -it $DEVICE_OPTION -v $HOME:/${USER} $IMAGE_NAME /bin/bash
 }
