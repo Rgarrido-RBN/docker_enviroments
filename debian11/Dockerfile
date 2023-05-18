@@ -88,9 +88,9 @@ RUN dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" \
 RUN cd /root && git clone https://github.com/Distrotech/flux && cd flux && \
   autoreconf -fi  && ./configure --host=arm-linux-gnueabihf && make && make install 
 
-VOLUME ["/rbn"]
+VOLUME ["/$USERNAME"]
 
-WORKDIR /rbn
+WORKDIR /$USERNAME
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
@@ -103,5 +103,5 @@ CMD ["/bin/bash"]
  
 ENV USER_NAME=$USERNAME
 
-WORKDIR /rbn
+WORKDIR /$USERNAME
 

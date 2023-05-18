@@ -15,6 +15,7 @@ RUN : \
     cmake \
     check \
     curl \
+    python3.8-venv \
     flex \
     git \
     gperf \
@@ -22,6 +23,7 @@ RUN : \
     libffi-dev \
     libncurses-dev \
     libpython2.7 \
+    autoconf \
     libusb-1.0-0-dev \
     make \
     ninja-build \
@@ -100,9 +102,6 @@ ENV GOSU_VERSION=1.10
 RUN dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" \
 	&& wget -q -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch" \
 	&& chmod +sx /usr/local/bin/gosu
-
-RUN cd /root && git clone https://github.com/Distrotech/flux && cd flux && \
-  autoreconf -fi  && ./configure --host=arm-linux-gnueabihf && make && make install 
 
 VOLUME ["/rbn"]
 
